@@ -25,5 +25,7 @@ class Sheets(object):
     def get_all_worksheets(self, spreadsheet: gspread.spreadsheet.Spreadsheet) -> List[ gspread.worksheet.Worksheet]:
         return spreadsheet.worksheets()
 
-
-        
+    def getWorkSheet(self):
+        self.auth()
+        sheet = self.get_sheet_by_key('1XmPko5pbcw0HdvPZeL7Fw8tfX4zhvxREUDGISC54jwk')
+        return self.get_0th_worksheet(sheet)  
