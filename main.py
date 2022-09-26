@@ -11,7 +11,6 @@ ws = sheets.getWorkSheet()
 lr = cg.ChartGeneratorLeftRight(ws)
 single = cg.ChartGeneratorSingle(ws)
 
-
 class SheetParamsSingle(BaseModel):
     index: int
     style: str
@@ -29,7 +28,7 @@ def get_chart(sheetParam: SheetParamsSingle):
         case 'chart':
             chart = single.make_chart(sheetParam.index)
         case 'hover':
-            chart = single.make_chart_with_hover_tool_tip(index)(sheetParam.index)
+            chart = single.make_chart_with_hover_tool_tip(sheetParam.index)
         case 'tooltip':
             chart = single.make_chart_with_tool_tip(sheetParam.index)
         case _:

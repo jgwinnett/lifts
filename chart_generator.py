@@ -99,7 +99,8 @@ class ChartGeneratorLeftRight(ChartGenerator):
         chart = alt.layer(
             line, selectors, points, rules, text
         ).properties(
-            width=600, height=300
+            width=1500,
+            height=350
         ).configure(**self.chart_style())
 
         return chart
@@ -206,8 +207,9 @@ class ChartGeneratorSingle(ChartGenerator):
         chart = alt.layer(
             line, selectors, points, rules, text
         ).properties(
-            width=600, height=300
-        )
+            width=1500,
+            height=250
+        ).configure(**self.chart_style())
 
         return chart
 
